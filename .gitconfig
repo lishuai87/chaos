@@ -1,0 +1,30 @@
+[user]
+	name = gladiator
+	email = lishuaihenu@gmail.com
+[core]
+	editor = emacsclient -t -a \"\"
+[alias]
+	co = checkout
+	ci = commit
+	st = status
+	br = branch
+	unstage = reset HEAD --
+	last = log -1 HEAD
+	visual = !gitk
+	graph = log --graph --oneline --decorate
+[color]
+	ui = true
+
+[diff]
+        tool = ediff
+        guitool = ediff
+
+[difftool "ediff"]
+        cmd = ~/.emacs.d/ediff.sh $LOCAL $REMOTE $MERGED
+
+[merge]
+        tool = ediff
+
+[mergetool "ediff"]
+        cmd = ~/.emacs.d/ediff.sh $LOCAL $REMOTE $MERGED $BASE
+        trustExitCode = true
