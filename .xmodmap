@@ -1,0 +1,7 @@
+keysym Caps_Lock = Control_L
+clear Lock
+add Control = Control_L
+
+keycode 135 = Control_R
+keysym Menu = Control_R
+add Control = Control_R
