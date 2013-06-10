@@ -1,0 +1,24 @@
+#!/bin/sh
+#
+# script to bring up the tun device in QEMU in bridged mode
+# first parameter is name of tap device (e.g. tap0)
+#
+# First take eth0 down, then bring it up with IP 0.0.0.0
+#
+sudo ifconfig eth0 down
+sudo ifconfig eth0 0.0.0.0 promisc
+#
+# Bring up the tap device (name specified as first argument, by QEMU)
+#
+# openvpn --mktun --dev $1 --user `id -un`
+sudo ip tuntap add dev $1 mode tap user `id -un`
+sudo ifconfig $1 0.0.0.0 promisc
+#
+# create the bridge between eth0 and the tap device
+#
+sudo brctl addbr br0
+sudo brctl addif br0 eth0
+sudo brctl addif br0 $1
+#
+sudo ifconfig $1 up
+sudo dhcpcd -t 30 -h `id -un` br0
