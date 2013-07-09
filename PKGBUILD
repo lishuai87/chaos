@@ -15,10 +15,10 @@ license=('GPL')
 depends=('wxgtk' 'gd' 'geoip' 'libupnp' 'crypto++' 'libsm')
 conflicts=('amule')
 provides=('amule=${pkgver}')
-source=("http://downloads.sourceforge.net/project/amule/aMule/${pkgver}/aMule-${pkgver}.tar.bz2"
+source=("aMule-${pkgver}.tar.bz2"
         'amule-dlp-2.3.1.patch')
 sha1sums=('25bcef92b06cb34849afaf052e2cd66b4a8454c2'
-          '2c3713d05aa83195a174b4e8c840709c52946afa')
+          'b4de3584794bdaa04761a45fb6c3a2436d6f9edd')
 
 build() {
   cd "${srcdir}/aMule-${pkgver}"

@@ -1,6 +1,6 @@
-diff -uNr aMule-2.3.1/po/zh_CN.po aMule-2.3.1-dlp/po/zh_CN.po
+diff -uNr aMule-2.3.1/po/zh_CN.po dlp/po/zh_CN.po
 --- aMule-2.3.1/po/zh_CN.po	2011-11-12 04:59:40.000000000 +0800
-+++ aMule-2.3.1-dlp/po/zh_CN.po	2013-07-09 10:18:51.815659313 +0800
++++ dlp/po/zh_CN.po	2013-07-09 23:14:35.693077002 +0800
 @@ -466,6 +466,12 @@
  msgid "http://kademlia.scs.cs.nyu.edu\n"
  msgstr "http://kademlia.scs.cs.nyu.edu\n"
@@ -61,9 +61,9 @@ diff -uNr aMule-2.3.1/po/zh_CN.po aMule-2.3.1-dlp/po/zh_CN.po
  #~ msgid "Fetching status..."
  #~ msgstr "正在获取状态..."
  
-diff -uNr aMule-2.3.1/src/BaseClient.cpp aMule-2.3.1-dlp/src/BaseClient.cpp
+diff -uNr aMule-2.3.1/src/BaseClient.cpp dlp/src/BaseClient.cpp
 --- aMule-2.3.1/src/BaseClient.cpp	2011-10-06 03:02:32.000000000 +0800
-+++ aMule-2.3.1-dlp/src/BaseClient.cpp	2013-07-09 10:18:51.698992649 +0800
++++ dlp/src/BaseClient.cpp	2013-07-09 23:14:35.649743670 +0800
 @@ -17,12 +17,15 @@
  // but WITHOUT ANY WARRANTY; without even the implied warranty of
  // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -261,9 +261,9 @@ diff -uNr aMule-2.3.1/src/BaseClient.cpp aMule-2.3.1-dlp/src/BaseClient.cpp
  
  #ifdef DEBUG_ZOMBIE_CLIENTS
  void CUpDownClient::Unlink(const wxString& from)
-diff -uNr aMule-2.3.1/src/CString_wx.h aMule-2.3.1-dlp/src/CString_wx.h
+diff -uNr aMule-2.3.1/src/CString_wx.h dlp/src/CString_wx.h
 --- aMule-2.3.1/src/CString_wx.h	1970-01-01 08:00:00.000000000 +0800
-+++ aMule-2.3.1-dlp/src/CString_wx.h	2013-07-09 10:18:51.698992649 +0800
++++ dlp/src/CString_wx.h	2013-07-09 23:14:35.646410336 +0800
 @@ -0,0 +1,59 @@
 +/**
 + * Author:	Bill Lee<bill.lee.y@gmail.com>
@@ -324,9 +324,9 @@ diff -uNr aMule-2.3.1/src/CString_wx.h aMule-2.3.1-dlp/src/CString_wx.h
 +		}
 +};
 +#endif
-diff -uNr aMule-2.3.1/src/DownloadQueue.cpp aMule-2.3.1-dlp/src/DownloadQueue.cpp
+diff -uNr aMule-2.3.1/src/DownloadQueue.cpp dlp/src/DownloadQueue.cpp
 --- aMule-2.3.1/src/DownloadQueue.cpp	2011-06-13 16:50:25.000000000 +0800
-+++ aMule-2.3.1-dlp/src/DownloadQueue.cpp	2013-07-09 10:18:51.695659316 +0800
++++ dlp/src/DownloadQueue.cpp	2013-07-09 23:14:35.649743670 +0800
 @@ -620,6 +620,13 @@
  		return;
  	}
@@ -341,9 +341,9 @@ diff -uNr aMule-2.3.1/src/DownloadQueue.cpp aMule-2.3.1-dlp/src/DownloadQueue.cp
  	// Filter sources which are known to be dead/useless
  	if ( theApp->clientlist->IsDeadSource( source ) || sender->IsDeadSource(source) ) {
  		source->Safe_Delete();
-diff -uNr aMule-2.3.1/src/ObservableQueue.h aMule-2.3.1-dlp/src/ObservableQueue.h
+diff -uNr aMule-2.3.1/src/ObservableQueue.h dlp/src/ObservableQueue.h
 --- aMule-2.3.1/src/ObservableQueue.h	2011-06-13 16:50:25.000000000 +0800
-+++ aMule-2.3.1-dlp/src/ObservableQueue.h	2013-07-09 10:18:51.698992649 +0800
++++ dlp/src/ObservableQueue.h	2013-07-09 23:14:35.646410336 +0800
 @@ -331,14 +331,14 @@
  template <typename ValueType>
  void CObservableQueue<ValueType>::ObserverAdded( ObserverType* o )
@@ -361,9 +361,9 @@ diff -uNr aMule-2.3.1/src/ObservableQueue.h aMule-2.3.1-dlp/src/ObservableQueue.
  }
  
  
-diff -uNr aMule-2.3.1/src/Preferences.cpp aMule-2.3.1-dlp/src/Preferences.cpp
+diff -uNr aMule-2.3.1/src/Preferences.cpp dlp/src/Preferences.cpp
 --- aMule-2.3.1/src/Preferences.cpp	2011-10-09 08:19:08.000000000 +0800
-+++ aMule-2.3.1-dlp/src/Preferences.cpp	2013-07-09 10:18:51.685659317 +0800
++++ dlp/src/Preferences.cpp	2013-07-09 23:14:35.666410336 +0800
 @@ -51,6 +51,9 @@
  
  #include "UserEvents.h"
@@ -451,9 +451,9 @@ diff -uNr aMule-2.3.1/src/Preferences.cpp aMule-2.3.1-dlp/src/Preferences.cpp
  
  CPreferences::~CPreferences()
  {
-diff -uNr aMule-2.3.1/src/Preferences.h aMule-2.3.1-dlp/src/Preferences.h
+diff -uNr aMule-2.3.1/src/Preferences.h dlp/src/Preferences.h
 --- aMule-2.3.1/src/Preferences.h	2011-10-09 08:19:08.000000000 +0800
-+++ aMule-2.3.1-dlp/src/Preferences.h	2013-07-09 10:18:51.702325983 +0800
++++ dlp/src/Preferences.h	2013-07-09 23:14:35.659743669 +0800
 @@ -583,6 +583,10 @@
  	// Sleep
  	static bool		GetPreventSleepWhileDownloading() { return s_preventSleepWhileDownloading; }
@@ -494,9 +494,9 @@ diff -uNr aMule-2.3.1/src/Preferences.h aMule-2.3.1-dlp/src/Preferences.h
  };
  
  
-diff -uNr aMule-2.3.1/src/PrefsUnifiedDlg.cpp aMule-2.3.1-dlp/src/PrefsUnifiedDlg.cpp
+diff -uNr aMule-2.3.1/src/PrefsUnifiedDlg.cpp dlp/src/PrefsUnifiedDlg.cpp
 --- aMule-2.3.1/src/PrefsUnifiedDlg.cpp	2011-10-09 08:19:08.000000000 +0800
-+++ aMule-2.3.1-dlp/src/PrefsUnifiedDlg.cpp	2013-07-09 10:18:51.482325989 +0800
++++ dlp/src/PrefsUnifiedDlg.cpp	2013-07-09 23:14:35.659743669 +0800
 @@ -186,7 +186,8 @@
  	{ wxTRANSLATE("Remote Controls"),	PreferencesRemoteControlsTab,	11 },
  	{ wxTRANSLATE("Online Signature"),	PreferencesOnlineSigTab,	21 },
@@ -507,9 +507,9 @@ diff -uNr aMule-2.3.1/src/PrefsUnifiedDlg.cpp aMule-2.3.1-dlp/src/PrefsUnifiedDl
  #ifdef __DEBUG__
  	,{ wxTRANSLATE("Debugging"),		PreferencesDebug,			25 }
  #endif
-diff -uNr aMule-2.3.1/src/Scanner.l aMule-2.3.1-dlp/src/Scanner.l
+diff -uNr aMule-2.3.1/src/Scanner.l dlp/src/Scanner.l
 --- aMule-2.3.1/src/Scanner.l	2011-06-13 16:50:25.000000000 +0800
-+++ aMule-2.3.1-dlp/src/Scanner.l	2013-07-09 10:18:51.698992649 +0800
++++ dlp/src/Scanner.l	2013-07-09 23:14:35.649743670 +0800
 @@ -25,7 +25,7 @@
  #define	YY_INPUT			ReadLexBuff
  #define	YY_FATAL_ERROR		FatalLexError
@@ -543,9 +543,9 @@ diff -uNr aMule-2.3.1/src/Scanner.l aMule-2.3.1-dlp/src/Scanner.l
  }
  
  static void FatalLexError(yyconst char msg[])
-diff -uNr aMule-2.3.1/src/ServerWnd.cpp aMule-2.3.1-dlp/src/ServerWnd.cpp
+diff -uNr aMule-2.3.1/src/ServerWnd.cpp dlp/src/ServerWnd.cpp
 --- aMule-2.3.1/src/ServerWnd.cpp	2011-06-13 16:50:25.000000000 +0800
-+++ aMule-2.3.1-dlp/src/ServerWnd.cpp	2013-07-09 10:18:51.462325989 +0800
++++ dlp/src/ServerWnd.cpp	2013-07-09 23:14:35.643077003 +0800
 @@ -45,6 +45,7 @@
  	EVT_BUTTON(ID_BTN_RESET, CServerWnd::OnBnClickedResetLog)
  	EVT_BUTTON(ID_BTN_RESET_SERVER, CServerWnd::OnBnClickedResetServerLog)
@@ -566,9 +566,9 @@ diff -uNr aMule-2.3.1/src/ServerWnd.cpp aMule-2.3.1-dlp/src/ServerWnd.cpp
  
  void CServerWnd::UpdateED2KInfo()
  {
-diff -uNr aMule-2.3.1/src/ServerWnd.h aMule-2.3.1-dlp/src/ServerWnd.h
+diff -uNr aMule-2.3.1/src/ServerWnd.h dlp/src/ServerWnd.h
 --- aMule-2.3.1/src/ServerWnd.h	2011-06-13 16:50:25.000000000 +0800
-+++ aMule-2.3.1-dlp/src/ServerWnd.h	2013-07-09 10:18:51.678992650 +0800
++++ dlp/src/ServerWnd.h	2013-07-09 23:14:35.643077003 +0800
 @@ -50,6 +50,7 @@
  	void OnBnClickedUpdateservermetfromurl(wxCommandEvent& evt);
  	void OnBnClickedResetLog(wxCommandEvent& evt);
@@ -577,9 +577,9 @@ diff -uNr aMule-2.3.1/src/ServerWnd.h aMule-2.3.1-dlp/src/ServerWnd.h
  
  	DECLARE_EVENT_TABLE()
  };
-diff -uNr aMule-2.3.1/src/UploadQueue.cpp aMule-2.3.1-dlp/src/UploadQueue.cpp
+diff -uNr aMule-2.3.1/src/UploadQueue.cpp dlp/src/UploadQueue.cpp
 --- aMule-2.3.1/src/UploadQueue.cpp	2011-10-16 04:22:58.000000000 +0800
-+++ aMule-2.3.1-dlp/src/UploadQueue.cpp	2013-07-09 10:18:51.685659317 +0800
++++ dlp/src/UploadQueue.cpp	2013-07-09 23:14:35.646410336 +0800
 @@ -390,6 +390,11 @@
  		return;
  	}
@@ -592,9 +592,9 @@ diff -uNr aMule-2.3.1/src/UploadQueue.cpp aMule-2.3.1-dlp/src/UploadQueue.cpp
  	client->AddAskedCount();
  	client->SetLastUpRequest();
  
-diff -uNr aMule-2.3.1/src/amule-gui.cpp aMule-2.3.1-dlp/src/amule-gui.cpp
+diff -uNr aMule-2.3.1/src/amule-gui.cpp dlp/src/amule-gui.cpp
 --- aMule-2.3.1/src/amule-gui.cpp	2011-09-10 00:29:47.000000000 +0800
-+++ aMule-2.3.1-dlp/src/amule-gui.cpp	2013-07-09 10:18:51.598992652 +0800
++++ dlp/src/amule-gui.cpp	2013-07-09 23:14:35.659743669 +0800
 @@ -332,6 +332,19 @@
  	return CamuleApp::GetLog(reset);
  }
@@ -615,9 +615,9 @@ diff -uNr aMule-2.3.1/src/amule-gui.cpp aMule-2.3.1-dlp/src/amule-gui.cpp
  
  wxString CamuleGuiApp::GetServerLog(bool reset)
  {
-diff -uNr aMule-2.3.1/src/amule.h aMule-2.3.1-dlp/src/amule.h
+diff -uNr aMule-2.3.1/src/amule.h dlp/src/amule.h
 --- aMule-2.3.1/src/amule.h	2011-09-10 00:29:47.000000000 +0800
-+++ aMule-2.3.1-dlp/src/amule.h	2013-07-09 10:18:51.695659316 +0800
++++ dlp/src/amule.h	2013-07-09 23:14:35.646410336 +0800
 @@ -395,6 +395,7 @@
  	wxString GetLog(bool reset = false);
  	wxString GetServerLog(bool reset = false);
@@ -635,9 +635,9 @@ diff -uNr aMule-2.3.1/src/amule.h aMule-2.3.1-dlp/src/amule.h
  	DECLARE_EVENT_TABLE()
  };
  
-diff -uNr aMule-2.3.1/src/amuleDlg.cpp aMule-2.3.1-dlp/src/amuleDlg.cpp
+diff -uNr aMule-2.3.1/src/amuleDlg.cpp dlp/src/amuleDlg.cpp
 --- aMule-2.3.1/src/amuleDlg.cpp	2011-10-09 08:19:08.000000000 +0800
-+++ aMule-2.3.1-dlp/src/amuleDlg.cpp	2013-07-09 10:18:51.698992649 +0800
++++ dlp/src/amuleDlg.cpp	2013-07-09 23:14:35.643077003 +0800
 @@ -315,7 +315,7 @@
  	wxNotebook* logs_notebook = CastChild( ID_SRVLOG_NOTEBOOK, wxNotebook);
  	wxNotebook* networks_notebook = CastChild( ID_NETNOTEBOOK, wxNotebook);
@@ -692,9 +692,9 @@ diff -uNr aMule-2.3.1/src/amuleDlg.cpp aMule-2.3.1-dlp/src/amuleDlg.cpp
  	m_networkpages[1].page->Show(thePrefs::GetNetworkKademlia());
  
  	networks_notebook->Show(thePrefs::GetNetworkED2K() && thePrefs::GetNetworkKademlia());
-diff -uNr aMule-2.3.1/src/amuleDlg.h aMule-2.3.1-dlp/src/amuleDlg.h
+diff -uNr aMule-2.3.1/src/amuleDlg.h dlp/src/amuleDlg.h
 --- aMule-2.3.1/src/amuleDlg.h	2011-06-13 16:50:25.000000000 +0800
-+++ aMule-2.3.1-dlp/src/amuleDlg.h	2013-07-09 10:18:51.585659319 +0800
++++ dlp/src/amuleDlg.h	2013-07-09 23:14:35.646410336 +0800
 @@ -115,6 +115,7 @@
  
  	void AddLogLine(const wxString& line);
@@ -712,9 +712,9 @@ diff -uNr aMule-2.3.1/src/amuleDlg.h aMule-2.3.1-dlp/src/amuleDlg.h
  	PageType m_networkpages[2];
  
  	bool LoadGUIPrefs(bool override_pos, bool override_size); 
-diff -uNr aMule-2.3.1/src/amuled.cpp aMule-2.3.1-dlp/src/amuled.cpp
+diff -uNr aMule-2.3.1/src/amuled.cpp dlp/src/amuled.cpp
 --- aMule-2.3.1/src/amuled.cpp	2011-07-13 23:00:12.000000000 +0800
-+++ aMule-2.3.1-dlp/src/amuled.cpp	2013-07-09 10:18:51.585659319 +0800
++++ dlp/src/amuled.cpp	2013-07-09 23:14:35.653077003 +0800
 @@ -715,4 +715,8 @@
  	return 0;	// That's neither yes nor no, ok, cancel
  }
@@ -724,9 +724,9 @@ diff -uNr aMule-2.3.1/src/amuled.cpp aMule-2.3.1-dlp/src/amuled.cpp
 +}
 +
  // File_checked_for_headers
-diff -uNr aMule-2.3.1/src/antiLeech.cpp aMule-2.3.1-dlp/src/antiLeech.cpp
+diff -uNr aMule-2.3.1/src/antiLeech.cpp dlp/src/antiLeech.cpp
 --- aMule-2.3.1/src/antiLeech.cpp	1970-01-01 08:00:00.000000000 +0800
-+++ aMule-2.3.1-dlp/src/antiLeech.cpp	2013-07-09 10:18:51.692325983 +0800
++++ dlp/src/antiLeech.cpp	2013-07-09 23:14:35.659743669 +0800
 @@ -0,0 +1,1506 @@
 +//DLP = Dynamic Leecher Protection
 +//this code is part of Xtreme-Mod
@@ -2234,9 +2234,9 @@ diff -uNr aMule-2.3.1/src/antiLeech.cpp aMule-2.3.1-dlp/src/antiLeech.cpp
 +
 +	return strSnafuTag;
 +}
-diff -uNr aMule-2.3.1/src/antiLeech.h aMule-2.3.1-dlp/src/antiLeech.h
+diff -uNr aMule-2.3.1/src/antiLeech.h dlp/src/antiLeech.h
 --- aMule-2.3.1/src/antiLeech.h	1970-01-01 08:00:00.000000000 +0800
-+++ aMule-2.3.1-dlp/src/antiLeech.h	2013-07-09 10:18:51.468992655 +0800
++++ dlp/src/antiLeech.h	2013-07-09 23:14:35.666410336 +0800
 @@ -0,0 +1,127 @@
 +#ifndef ANTILEECH_H
 +#define ANTILEECH_H
@@ -2365,9 +2365,9 @@ diff -uNr aMule-2.3.1/src/antiLeech.h aMule-2.3.1-dlp/src/antiLeech.h
 +
 +#undef __declspec
 +#endif
-diff -uNr aMule-2.3.1/src/antiLeech_amule.h aMule-2.3.1-dlp/src/antiLeech_amule.h
+diff -uNr aMule-2.3.1/src/antiLeech_amule.h dlp/src/antiLeech_amule.h
 --- aMule-2.3.1/src/antiLeech_amule.h	1970-01-01 08:00:00.000000000 +0800
-+++ aMule-2.3.1-dlp/src/antiLeech_amule.h	2013-07-09 10:18:51.472325989 +0800
++++ dlp/src/antiLeech_amule.h	2013-07-09 23:14:35.643077003 +0800
 @@ -0,0 +1,15 @@
 +#ifndef ANTILEECH_AMULE_H
 +#define ANTILEECH_AMULE_H
@@ -2384,9 +2384,9 @@ diff -uNr aMule-2.3.1/src/antiLeech_amule.h aMule-2.3.1-dlp/src/antiLeech_amule.
 +#define PF_GHOSTMOD	0x100
 +
 +#endif
-diff -uNr aMule-2.3.1/src/antiLeech_wx.cpp aMule-2.3.1-dlp/src/antiLeech_wx.cpp
+diff -uNr aMule-2.3.1/src/antiLeech_wx.cpp dlp/src/antiLeech_wx.cpp
 --- aMule-2.3.1/src/antiLeech_wx.cpp	1970-01-01 08:00:00.000000000 +0800
-+++ aMule-2.3.1-dlp/src/antiLeech_wx.cpp	2013-07-09 10:18:51.688992650 +0800
++++ dlp/src/antiLeech_wx.cpp	2013-07-09 23:14:35.646410336 +0800
 @@ -0,0 +1,25 @@
 +//Author:	greensea <gs@bbxy.net>
 +#include "antiLeech_wx.h" //Modified by Bill Lee.
@@ -2413,9 +2413,9 @@ diff -uNr aMule-2.3.1/src/antiLeech_wx.cpp aMule-2.3.1-dlp/src/antiLeech_wx.cpp
 +		ret = ret - haystacki + haystack;
 +	return ret;
 +}
-diff -uNr aMule-2.3.1/src/antiLeech_wx.h aMule-2.3.1-dlp/src/antiLeech_wx.h
+diff -uNr aMule-2.3.1/src/antiLeech_wx.h dlp/src/antiLeech_wx.h
 --- aMule-2.3.1/src/antiLeech_wx.h	1970-01-01 08:00:00.000000000 +0800
-+++ aMule-2.3.1-dlp/src/antiLeech_wx.h	2013-07-09 10:18:51.698992649 +0800
++++ dlp/src/antiLeech_wx.h	2013-07-09 23:14:35.646410336 +0800
 @@ -0,0 +1,49 @@
 +#ifndef ANTILEECH_WX_H
 +#define ANTILEECH_WX_H
@@ -2466,9 +2466,9 @@ diff -uNr aMule-2.3.1/src/antiLeech_wx.h aMule-2.3.1-dlp/src/antiLeech_wx.h
 +#define _tcsicmp(a, b)		wcscasecmp(a, b)
 +
 +#endif
-diff -uNr aMule-2.3.1/src/muuli_wdr.cpp aMule-2.3.1-dlp/src/muuli_wdr.cpp
+diff -uNr aMule-2.3.1/src/muuli_wdr.cpp dlp/src/muuli_wdr.cpp
 --- aMule-2.3.1/src/muuli_wdr.cpp	2011-10-08 15:58:56.000000000 +0800
-+++ aMule-2.3.1-dlp/src/muuli_wdr.cpp	2013-07-09 10:18:51.485659321 +0800
++++ dlp/src/muuli_wdr.cpp	2013-07-09 23:14:35.646410336 +0800
 @@ -1769,6 +1769,56 @@
      return item0;
  }
@@ -2526,7 +2526,7 @@ diff -uNr aMule-2.3.1/src/muuli_wdr.cpp aMule-2.3.1-dlp/src/muuli_wdr.cpp
  wxSizer *PreferencesFilesTab( wxWindow *parent, bool call_fit, bool set_sizer )
  {
      wxBoxSizer *item0 = new wxBoxSizer( wxVERTICAL );
-@@ -2587,6 +2637,41 @@
+@@ -2587,6 +2637,30 @@
      return item0;
  }
  
@@ -2536,25 +2536,14 @@ diff -uNr aMule-2.3.1/src/muuli_wdr.cpp aMule-2.3.1-dlp/src/muuli_wdr.cpp
 +
 +    wxBoxSizer *item1 = new wxBoxSizer( wxHORIZONTAL );
 +
-+    wxStaticBitmap *item2 = new wxStaticBitmap( parent, -1, amuleDlgImages( 3 ), wxDefaultPosition, wxDefaultSize );
-+    item2->SetToolTip( _("Display DLP log") );
-+    item1->Add( item2, 0, wxALIGN_CENTER|wxALL, 5 );
++    CMuleTextCtrl *item2 = new CMuleTextCtrl( parent, ID_DLPINFO, wxT(""), wxDefaultPosition, wxDefaultSize, wxTE_MULTILINE|wxTE_READONLY|wxVSCROLL );
++    item1->Add( item2, 1, wxGROW|wxALIGN_CENTER_HORIZONTAL, 5 );
 +
-+    wxStaticText *item3 = new wxStaticText( parent, -1, _("DLP Info"), wxDefaultPosition, wxDefaultSize, 0 );
-+    item1->Add( item3, 0, wxALIGN_CENTER|wxALL, 5 );
++    wxButton *item3 = new wxButton( parent, ID_BTN_RESET_DLP, _("Reset"), wxDefaultPosition, wxDefaultSize, 0 );
++    item3->SetToolTip( _("Click this button to reset the log.") );
++    item1->Add( item3, 0, wxGROW|wxALIGN_CENTER_HORIZONTAL|wxALL, 5 );
 +
-+    item0->Add( item1, 0, wxALIGN_CENTER_VERTICAL, 5 );
-+
-+    wxBoxSizer *item4 = new wxBoxSizer( wxHORIZONTAL );
-+
-+    CMuleTextCtrl *item5 = new CMuleTextCtrl( parent, ID_DLPINFO, wxT(""), wxDefaultPosition, wxDefaultSize, wxTE_MULTILINE|wxTE_READONLY|wxVSCROLL );
-+    item4->Add( item5, 1, wxGROW|wxALIGN_CENTER_HORIZONTAL, 5 );
-+
-+    wxButton *item6 = new wxButton( parent, ID_BTN_RESET_DLP, _("Reset"), wxDefaultPosition, wxDefaultSize, 0 );
-+    item6->SetToolTip( _("Click this button to reset the log.") );
-+    item4->Add( item6, 0, wxGROW|wxALIGN_CENTER_HORIZONTAL|wxALL, 5 );
-+
-+    item0->Add( item4, 1, wxGROW|wxALIGN_CENTER_VERTICAL, 5 );
++    item0->Add( item1, 1, wxGROW|wxALIGN_CENTER_VERTICAL, 5 );
 +
 +    if (set_sizer) {
 +        parent->SetSizer( item0 );
@@ -2568,7 +2557,7 @@ diff -uNr aMule-2.3.1/src/muuli_wdr.cpp aMule-2.3.1-dlp/src/muuli_wdr.cpp
  wxSizer *serverListDlgDown( wxWindow *parent, bool call_fit, bool set_sizer )
  {
      wxStaticBox *item1 = new wxStaticBox( parent, -1, wxT("") );
-@@ -2615,6 +2700,10 @@
+@@ -2615,6 +2689,10 @@
      Kad_Info( item7, FALSE );
      item3->AddPage( item7, _("Kad Info") );
  
@@ -2579,9 +2568,9 @@ diff -uNr aMule-2.3.1/src/muuli_wdr.cpp aMule-2.3.1-dlp/src/muuli_wdr.cpp
      item0->Add( item2, 1, wxGROW|wxALIGN_CENTER_VERTICAL, 5 );
  
      if (set_sizer)
-diff -uNr aMule-2.3.1/src/muuli_wdr.h aMule-2.3.1-dlp/src/muuli_wdr.h
+diff -uNr aMule-2.3.1/src/muuli_wdr.h dlp/src/muuli_wdr.h
 --- aMule-2.3.1/src/muuli_wdr.h	2011-10-08 15:58:56.000000000 +0800
-+++ aMule-2.3.1-dlp/src/muuli_wdr.h	2013-07-09 10:18:51.585659319 +0800
++++ dlp/src/muuli_wdr.h	2013-07-09 23:14:35.643077003 +0800
 @@ -335,6 +335,10 @@
  #define ID_BTN_RESET_SERVER 10240
  wxSizer *ServerInfoLog( wxWindow *parent, bool call_fit = TRUE, bool set_sizer = TRUE );
@@ -2612,9 +2601,9 @@ diff -uNr aMule-2.3.1/src/muuli_wdr.h aMule-2.3.1-dlp/src/muuli_wdr.h
  extern wxSizer *IDC_CURJOB;
  #define IDC_CONV_PB_LABEL 10307
  #define IDC_CONV_PROZENT 10308
-diff -uNr aMule-2.3.1/src/updownclient.h aMule-2.3.1-dlp/src/updownclient.h
+diff -uNr aMule-2.3.1/src/updownclient.h dlp/src/updownclient.h
 --- aMule-2.3.1/src/updownclient.h	2011-06-13 16:50:25.000000000 +0800
-+++ aMule-2.3.1-dlp/src/updownclient.h	2013-07-09 10:18:51.695659316 +0800
++++ dlp/src/updownclient.h	2013-07-09 23:14:35.659743669 +0800
 @@ -564,6 +564,8 @@
  	void		SetConnectionReason(const wxString& reason) { connection_reason = reason; }
  #endif
