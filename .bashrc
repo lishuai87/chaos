@@ -5,7 +5,6 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-#PS1='[\u@\h \W]\$ '
 PS1='[\u@\h:\w]\$ '
 
 # ls
@@ -49,7 +48,6 @@ alias qemu='qemu-system-x86_64'
 alias startxp='kvm -m 512 -drive file=~/program/vm/xp/xp.img,cache=writeback -localtime -net nic,model=rtl8139,macaddr=52-54-00-00-08-01 -net vde -boot c -smp 2 -soundhw es1370'
 
 # game
-alias war3='env WINEPREFIX=~/.win32 wine ~/program/Warcraft3/War3.exe -opengl'
 alias sg='env WINEPREFIX=~/.win32 wine ~/program/game/san12/10450459/San12PK.exe -opengl'
 alias steam='export LC_CTYPE="en_US.UTF-8" && steam'
 
