@@ -1,5 +1,6 @@
 #!/bin/sh
 
+#test1
 if test $# -ne 1; then
     echo "Usage: `basename $0 .sh` <process-id>" 1>&2
     exit 1
